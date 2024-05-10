@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Pending from './components/Pending';
 import Uploaded from './components/Uploaded';
 import { Logo, Earth, glass, metal, paper, plastic, organic, battery } from './assets';
+import './app.css';
 
 function App() {
   const [isPending, setIsPending] = useState(false);
@@ -20,8 +21,8 @@ function App() {
   };
 
   return (
-    <div className="w-full h-[100vh] bg-white sm:bg-grey flex justify-center items-center">
-      <img src={Logo} className="absolute top-4 left-4 sm:top-6 sm:left-6 w-40" />
+    <div className="w-full h-[100vh] bg-green-500 sm:bg-grey flex justify-center items-center background">
+      {/* <img src={Logo} className="absolute top-4 left-4 sm:top-6 sm:left-6 w-40" /> */}
       {error ? (
         <div className="flex flex-col items-center gap-4 drop-shadow-2xl bg-white px-20 py-10 rounded-2xl">
           <p className="text-red-600 text-md rounded-2xl bg-red-200 px-9 py-3">
@@ -56,7 +57,7 @@ function App() {
           setTrashBinImage={setTrashBinImage}
         />
       )}
-      <img src={Earth} className="absolute bottom-0 right-0 w-28 sm:bottom-4 sm:right-4 sm:w-64" />
+      {/* <img src={Earth} className="absolute bottom-0 left-0 w-28 sm:bottom-4 sm:right-4 sm:w-64" /> */}
     </div>
   );
 }
