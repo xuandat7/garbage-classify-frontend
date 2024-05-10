@@ -26,7 +26,7 @@ const Form = ({ setImage, setIsPending, setUrl, setColor, setError, setPredict, 
       const data = response.data;
 
       setUrl(data.path);
-      const adviceResponse = await fetch('https://garbage-classification-web.onrender.com/get-advice', {
+      const adviceResponse = await fetch('https://fast-api-garbage-classfication.onrender.com/get-advice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
