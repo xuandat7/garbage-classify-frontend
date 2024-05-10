@@ -26,24 +26,24 @@ const Form = ({ setImage, setIsPending, setUrl, setColor, setError, setPredict, 
       const data = response.data;
 
       setUrl(data.path);
-      const adviceResponse = await fetch('https://fast-api-garbage-classfication.onrender.com/get-advice', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ type_trash: data.predicted_value }),
-      });
+      // const adviceResponse = await fetch('https://fast-api-garbage-classfication.onrender.com/get-advice', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ type_trash: data.predicted_value }),
+      // });
 
-      if (!adviceResponse.ok) {
-        throw Error('Failed to fetch advice');
-      }
+      // if (!adviceResponse.ok) {
+      //   throw Error('Failed to fetch advice');
+      // }
 
-      const adviceData = await adviceResponse.json();
-      console.log('Advice:', adviceData.advice);
-      console.log('Time:', adviceData.time);
+      // const adviceData = await adviceResponse.json();
+      // console.log('Advice:', adviceData.advice);
+      // console.log('Time:', adviceData.time);
 
       setPredict(data.predicted_value);
-      setAdvice(adviceData.advice);
+      // setAdvice(adviceData.advice);
       switch (data.predicted_value) {
         case 'glass':
           setTrashBinImage(glass);
